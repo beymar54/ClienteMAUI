@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClienteMAUI.Pages.GestionPlatosPage"
+             Title="Gestión de platos">
+    <!--
+    <ContentPage.Resources> -->
+    <!--    <Style TargetType="Button">-->
+    <!--        <Setter Property="Margin" Value="0,5,0,5"/>-->
+    <!--    </Style>-->
+    <!--</ContentPage.Resources> -->
+
+    <Grid RowDefinitions="*, Auto" ColumnDefinitions="*,*,*" ColumnSpacing="4">
+        <TableView Intent="Data" Grid.Row="0" Grid.ColumnSpan="3">
+            <TableRoot>
+                <TableSection Title="Tarea a realizar">
+                    <EntryCell Text="{Binding Path=plato.Nombre}" Placeholder="Introduzca el nombre de un plato."/>
+                    <EntryCell Text="{Binding Path=plato.Costo}" Placeholder="Introduzca el costo del plato." Keyboard="Numeric"/>
+                    <EntryCell Text="{Binding Path=plato.Ingredientes}" Placeholder="Introduzca los ingredientes del plato."/>
+                    
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        
+        <Button Text="Guardar" Clicked="OnGuardarClic" Grid.Row="1" Grid.Column="0" Margin="15,5"/>
+        <Button Text="Eliminar" Clicked="OnEliminarClic" Grid.Row="1" Grid.Column="1" Margin="0,5"/>
+        <Button Text="Cancelar" Clicked="OnCancelarClic" Grid.Row="1" Grid.Column="2" Margin="15,5"/>
+    </Grid>
+    <!-- VerticalStackLayout Margin="15"> -->
+    <!-- <Label Text="Acciones a realizar"/> -->
+    <!-- <Entry Text="{Binding Path=Plato.Nombre}" Placeholder="Introduzca el nombre de un plato."/> -->
+        <!--<Button Text="Guardar" Clicked="OnGuardarClic"/>-->
+       <!-- <Button Text="Eliminar" Clicked="OnEliminarClic"/>-->
+        <!-- <Button Text="Cancelar" Clicked="OnCancelarClic"/>-->
+    <!-- </VerticalStackLayout> -->
+</ContentPage>
